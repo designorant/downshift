@@ -161,7 +161,7 @@ render(
         <label {...getLabelProps()}>Enter a fruit</label>
         <input {...getInputProps()} />
         <ul {...getMenuProps()}>
-          {isOpen ? (
+          {isOpen &&
             items
               .filter(item => !inputValue || item.value.includes(inputValue))
               .map((item, index) => (
@@ -179,8 +179,7 @@ render(
                 >
                   {item.value}
                 </li>
-              ))
-          ) : null}
+              ))}
         </ul>
       </div>
     )}
